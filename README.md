@@ -23,7 +23,7 @@ Implementacion de un service SOAP basico para procesar las peticiones realizadas
 - Posicionarse en la raiz del directorio restClient
 - ejecutar los siguientes comandos:
 -   - composer install
-    - php -S localhost:8000 -t public
+    - php -S localhost:8000 -t public luego acceder a la url: http://localhost:8000
 
 Ya con esto deberias tener ejecutandose ambos entornos. Como opcion en caso que te muestre algun error con el paquete soap de php, 
 podrias ejecutar el siguiente comando:
