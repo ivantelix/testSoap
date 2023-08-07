@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "0f792185-ed3a-46c2-96fe-8528bd0b92ef",
+		"name": "soapTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register-client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"names\": \"Usuario\",\n    \"document\": \"12345678\",\n    \"email\": \"user@gmail.com\",\n    \"phone\": \"123789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/register-client",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register-client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recharge wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": \"12345678\",\n    \"phone\": \"123789\",\n    \"amount\": 5000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/recharge-wallet",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"recharge-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": \"12345678\",\n    \"phone\": \"123789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/check-balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"check-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 150,\n    \"client_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/payment",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm-payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_payment\": 1,\n    \"id_session\": \"id-session recibida en la peticion de payment\",\n    \"token\": \"valor enviado al correo\",\n    \"client_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/confirm-payment",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"confirm-payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
