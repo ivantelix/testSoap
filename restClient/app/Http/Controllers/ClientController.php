@@ -21,9 +21,7 @@ class ClientController extends Controller
             $payload = ClientRequest::getPayloadValue($request->all());
             $res = $soap->handler('register-client')->registerClient($payload);
 
-            return response()->json($res);
-
-            //return response()->json(new ResponseResource($res));
+            return response()->json(new ResponseResource($res));
 
         } catch (Exception $e) {
 
