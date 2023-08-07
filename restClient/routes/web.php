@@ -17,5 +17,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->post('register-client', 'VirtualWalletController@registerClient');
+$router->post('register-client', 'ClientController@registerClient');
 $router->post('recharge-money', 'VirtualWalletController@RechargeMoney');

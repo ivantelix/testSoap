@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace App\Actions;
 
 use App\Helpers\Wrappers\ClientWrapper;
-use App\Helpers\Wrappers\SuccessWrapperResponse;
-use App\Http\Resources\ClientResource;
+use App\Helpers\Wrappers\WrapperSuccessResponse;
 use App\Models\Client;
 use App\Helpers\ClientValidation;
 
@@ -29,7 +28,10 @@ final class RegisterClient {
             'document' => $data['document']
         ]);
 
-        SuccessWrapperResponse::wrapper(ClientWrapper::wrapper($user));
+        return WrapperSuccessResponse::wrapper([
+            'message' => 'Client registered successfully',
+            'data' => ClientWrapper::wrapper($user)
+        ]);
 
     }
 }

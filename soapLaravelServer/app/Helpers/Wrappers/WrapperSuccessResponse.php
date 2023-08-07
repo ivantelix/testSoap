@@ -2,14 +2,15 @@
 
 namespace App\Helpers\Wrappers;
 
-class SuccessWrapperResponse {
+class WrapperSuccessResponse {
 
     public static function wrapper($data)
     {
         return [
             'success' => true,
-            'code' => 00,
-            'data' => $data
+            'code' => '00',
+            'message_success' => $data['message'],
+            'data' => $data['data']
         ];
     }
 }

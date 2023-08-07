@@ -8,9 +8,9 @@ class WrapperErrorResponse {
     {
         return [
             'success' => false,
-            'code' => 400,
-            'message_error' => 'Bad request',
-            'data' => $data
+            'code' => $data['code'],
+            'message_error' => $data['message'],
+            'data' => $data['data']
         ];
     }
 
