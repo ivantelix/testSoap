@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->double('amount', 5, 2);
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('client_id')->constrained();
+            $table->enum('status', ['unpaid', 'paid'])->default('unpaid');
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }

@@ -5,20 +5,17 @@ namespace App\Helpers\Validations;
 use Illuminate\Support\Facades\Validator;
 use App\Helpers\Wrappers\WrapperErrorResponse;
 
-final class ClientValidation {
+final class PaymentValidation {
 
     public function validate($inputs)
     {
         $validator = Validator::make($inputs, [
-            'email' => ['required', 'string', 'email', 'unique:clients'],
-            'phone' => ['required', 'string', 'unique:clients'],
-            'names' => ['required', 'string'],
-            'document' => ['required', 'string', 'unique:clients']
+            'client_id' => ['required', 'integer'],
+            'amount' => ['required', 'numeric']
         ], [
             'required' => 'The :attribute field is required.',
-            'string' => 'The :attribute only accepts value of type string',
-            'email' => 'The :attribute invalid email format',
-            'unique' => 'The :attribute already exist'
+            'integer' => 'The :attribute only accepts value of type integer',
+            'numeric' => 'The :attribute only accepts value of type numeric'
         ]);
 
         if ($validator->fails()) {

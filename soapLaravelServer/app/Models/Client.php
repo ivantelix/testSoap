@@ -15,4 +15,9 @@ class Client extends Model
     {
         return $this->hasOne(Wallet::class);
     }
+
+    public function payments()
+    {
+        return $this->hasMany(PaymentM::class);
+    }
 }
