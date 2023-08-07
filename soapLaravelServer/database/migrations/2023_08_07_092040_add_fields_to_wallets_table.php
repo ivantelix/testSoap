@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('wallets', function (Blueprint $table) {
-            $table->dropColumn(['avaiable_balance']);
+            $table->dropColumn(['blocked_balance']);
         });
     }
 };
