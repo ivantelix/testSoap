@@ -6,9 +6,9 @@ use \SoapClient;
 
 final class SoapService {
 
-	public static function handler()
+	public static function handler($location)
 	{
 		return new SoapClient(null, array('uri' => 'http://localhost/',
-           'location' => 'http://localhost/api/register-client'));
+           'location' => 'http://localhost/api/'.$location));
 	}
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained();
-            $table->double('balance', 5, 2)->default(0.00);
+            $table->double('balance', 8, 2);
             $table->timestamps();
         });
     }

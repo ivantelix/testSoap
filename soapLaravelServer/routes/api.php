@@ -10,5 +10,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('register-client', [SoapController::class, 'registerClient']);
-//Route::post('recharge-money', [SoapController::class, 'rechargeMoney']);
+Route::post('recharge-wallet', [SoapController::class, 'rechargeWallet']);
 

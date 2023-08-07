@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Helpers\Validations;
 
 use Illuminate\Support\Facades\Validator;
 use App\Helpers\Wrappers\WrapperErrorResponse;
 
-final class ClientValidation {
+final class RechargeWalletValidation {
 
     public function validate($inputs)
     {
         $validator = Validator::make($inputs, [
-            'email' => ['required', 'string', 'email', 'unique:clients'],
-            'phone' => ['required', 'string', 'unique:clients'],
-            'names' => ['required', 'string'],
-            'document' => ['required', 'string', 'unique:clients']
+            'document' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'amount' => ['required', 'numeric'],
         ], [
             'required' => 'The :attribute field is required.',
-            'email' => 'The :attribute invalid email format',
-            'unique' => 'The :attribute already exist'
+            'string' => 'The :attribute only accepts value of type string',
+            'numeric' => 'The :attribute only accepts value of type numeric'
         ]);
 
         if ($validator->fails()) {

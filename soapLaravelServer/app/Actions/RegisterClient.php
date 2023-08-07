@@ -7,7 +7,7 @@ namespace App\Actions;
 use App\Helpers\Wrappers\ClientWrapper;
 use App\Helpers\Wrappers\WrapperSuccessResponse;
 use App\Models\Client;
-use App\Helpers\ClientValidation;
+use App\Helpers\Validations\ClientValidation;
 
 
 final class RegisterClient {
@@ -21,7 +21,7 @@ final class RegisterClient {
             return $resValidate;
         }
 
-        $user = Client::create([
+        $client = Client::create([
             'names' => $data['names'],
             'email' => $data['email'],
             'phone' => $data['phone'],
@@ -30,7 +30,7 @@ final class RegisterClient {
 
         return WrapperSuccessResponse::wrapper([
             'message' => 'Client registered successfully',
-            'data' => ClientWrapper::wrapper($user)
+            'data' => ClientWrapper::wrapper($client)
         ]);
 
     }

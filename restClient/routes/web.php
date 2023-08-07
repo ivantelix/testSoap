@@ -18,4 +18,4 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post('register-client', 'ClientController@registerClient');
-$router->post('recharge-money', 'VirtualWalletController@RechargeMoney');
+$router->post('recharge-wallet', 'WalletController@recharge');
