@@ -19,3 +19,4 @@ $router->get('/', function () use ($router) {
 
 $router->post('register-client', 'ClientController@registerClient');
 $router->post('recharge-wallet', 'WalletController@recharge');
+$router->post('check-balance', 'WalletController@checkBalance');
